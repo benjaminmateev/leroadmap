@@ -1,0 +1,40 @@
+Models
+Data Requirements
+
+- User 
+Email
+Name
+Avatar
+
+- Project
+Name
+Start Date
+Sprint Length
+Editors
+
+- Sprint
+Number
+Descirption
+Feature
+Tasks
+Stage 
+
+- Feature/Initative
+Name
+Description
+Roles
+State
+
+- Roles
+Name
+Person
+
+- Tasks
+Title
+Status
+(Github, VSTS, To-Do)
+
+Stages
+Project ID
+Name 
+Color

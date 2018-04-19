@@ -9,3 +9,13 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+
+%{email: "bemateev@microsoft.com", name: "Benjamin", avatar: ""}
+|> Leroadmap.User.changeset()
+|> IO.inspect()
+|> Leroadmap.Repo.insert!()
+
+%{email: "naheraldv@microsoft.com", name: "Nathan", avatar: ""}
+|> Leroadmap.User.changeset()
+|> Leroadmap.Repo.insert!()
