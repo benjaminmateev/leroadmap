@@ -10,12 +10,16 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
+alias Leroadmap.{Project, Repo, User}
 
 %{email: "bemateev@microsoft.com", name: "Benjamin", avatar: ""}
-|> Leroadmap.User.changeset()
-|> IO.inspect()
-|> Leroadmap.Repo.insert!()
+|> User.changeset()
+|> Repo.insert!()
 
 %{email: "naheraldv@microsoft.com", name: "Nathan", avatar: ""}
-|> Leroadmap.User.changeset()
-|> Leroadmap.Repo.insert!()
+|> User.changeset()
+|> Repo.insert!()
+
+%{name: "Le Roadmap", start_date: ~D[2018-04-16]}
+|> Project.changeset()
+|> Repo.insert!()
