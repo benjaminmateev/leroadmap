@@ -20,6 +20,11 @@ defmodule LeroadmapWeb.Router do
     get("/", PageController, :index)
   end
 
+  scope "/", LeroadmapWeb do
+    pipe_through(:api)
+    resources "/projects", ProjectController 
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", LeroadmapWeb do
   #   pipe_through :api
