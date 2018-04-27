@@ -2,9 +2,12 @@ defmodule Leroadmap.Project do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Leroadmap.Feature
+
   schema "projects" do
     field :name, :string
     field :start_date, :date
+    has_many(:features, Feature)
 
     timestamps()
   end

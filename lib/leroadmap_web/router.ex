@@ -22,7 +22,10 @@ defmodule LeroadmapWeb.Router do
 
   scope "/", LeroadmapWeb do
     pipe_through(:api)
-    resources "/projects", ProjectController 
+    resources "/projects", ProjectController do
+      resources "/features", FeatureController, only: [:index, :create]
+    end
+    resources "/features", FeatureController, only: [:show]
   end
 
   # Other scopes may use custom stacks.
