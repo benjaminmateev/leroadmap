@@ -32,6 +32,7 @@ Person
 - Tasks
 Title
 Status
+Feature
 (Github, VSTS, To-Do)
 
 Stages

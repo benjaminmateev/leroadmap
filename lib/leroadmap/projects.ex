@@ -1,6 +1,6 @@
 defmodule Leroadmap.Projects do
 
-  alias Leroadmap.{Repo, Project, Feature}
+  alias Leroadmap.{Repo, Project, Feature, Stage}
 
   def fetch_all_projects do
     Repo.all(Project)
@@ -39,6 +39,25 @@ defmodule Leroadmap.Projects do
     case Repo.get(Feature, id) do
       nil -> {:error, :not_found}
       feature -> {:ok, feature}
+    end
+  end
+
+  def fetch_all_stages(%Project{} = project) do
+    project
+    |> Repo.preload(:stages)
+    |> Map.get(:stages)
+  end
+
+  def insert_stage(params, %Project{} = project) do
+    params
+    |> Stage.changeset(project)
+    |> Repo.insert()
+  end
+
+  def fetch_stage(id) do
+    case Repo.get(Stage, id) do
+      nil -> {:error, :not_found}
+      stage -> {:ok, stage}
     end
   end
 
